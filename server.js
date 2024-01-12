@@ -5,7 +5,7 @@ const app = express();
 
 const studentRouter = require("./routers/router")
 app.use(express.json());
-app.get('/api/v1', (req, res) => {
+app.get('/', (req, res) => {
     res.send("Welcome to your student Portal")
 });
 
