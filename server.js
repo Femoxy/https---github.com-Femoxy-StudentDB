@@ -1,6 +1,8 @@
 const express = require('express');
 require("./config/dbConfig")
-const port = 6060
+require('dotenv').config()
+
+const port = process.env.port
 const app = express();
 
 const studentRouter = require("./routers/router")
