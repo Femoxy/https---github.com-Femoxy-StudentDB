@@ -4,7 +4,7 @@ const validateREgStudent = (data) => {
         name: hapiJoiValidator.string().required().max(20).trim().messages({
             'string.empty': "This field can not be left empty",
         }),
-        email: hapiJoiValidator.string().required().max(40).trim(),
+        email: hapiJoiValidator.string().required().max(40),
         password: hapiJoiValidator.string().required().min(6).messages({
             'string.min': 'Password cannot be less than 6 characters'
         })

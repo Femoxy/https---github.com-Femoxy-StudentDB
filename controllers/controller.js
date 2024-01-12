@@ -88,6 +88,27 @@ const logIn = async (req, res) => {
     }   
 }
 
+const allStudent = async (req, res) =>{
+    try {
+      const user = await regModel.find();
+      if(!user){
+          res.status(404).json({
+              message: "no student",
+          });
+      }  else {
+          res.status(201).json({
+              message: "All Students",
+              data: user,
+              totalNumberOfUser: user.length,
+          });
+      }
+    }  catch (error) {
+      res.status(500).json({
+        message: error.message,
+      });
+    }   
+};
+
 const enterScore = async (req, res) => {
     try {
         const {error} = await validateScore(req.body);
@@ -219,4 +240,4 @@ const updateScore = async (req, res) => {
         
     }
 }
-module.exports = {register, logIn, enterScore, allScore, getOne, updateScore}
+module.exports = {register, logIn, allStudent, enterScore, allScore, getOne, updateScore}
