@@ -120,7 +120,7 @@ const enterScore = async (req, res) => {
             const userId = req.user.userId;
         const email = req.user.email
         const {Maths, English, Geology, Biology} = req.body;
-        if(Maths == "" || English == "" || Geology == "" || Biology == ""){
+        if(Maths == " " || English == " " || Geology == " " || Biology == " "){
             res.status(400).json({
                 message: "Any of the subject can't be left empty"
             }); return
